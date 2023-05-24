@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BizCard extends StatelessWidget {
@@ -29,8 +30,8 @@ class BizCard extends StatelessWidget {
 
   Container _getCard() {
     return Container(
-      width: 350,
-      height: 250,
+      width: 310,
+      height: 300,
       margin: const EdgeInsets.all(30.0),
       decoration: BoxDecoration(
         color: Colors.lightGreen,
@@ -41,11 +42,14 @@ class BizCard extends StatelessWidget {
         children: <Widget>[
           const Text(
             "Abdulazeez Ridwan Ademurewa",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+            ),
           ),
           // const Text("ridthedev.com"),
           const SizedBox(
-            height: 12.0,
+            height: 10.0,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +59,7 @@ class BizCard extends StatelessWidget {
                 size: 19,
               ),
               const SizedBox(
-                width: 10.0,
+                width: 15.0,
                 // height: 10.0,
               ),
               // Text(
@@ -144,10 +148,33 @@ class BizCard extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+          SizedBox(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                IconButton(
+                    onPressed: SharePressed,
+                    icon: Icon(
+                      Icons.share,
+                      color: Colors.black,
+                      size: 19,
+                    )),
+                SizedBox(
+                  width: 10,
+                )
+              ],
+            ),
           )
         ],
       ),
     );
+  }
+
+  void SharePressed() {
+    String message = 'Check out my repositiry on github'
+        'https://github.com/ridwan-101';
+    Share.share(message);
   }
 
   Container _getAvatar() {
