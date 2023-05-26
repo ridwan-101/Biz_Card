@@ -155,12 +155,12 @@ class BizCard extends StatelessWidget {
               children: <Widget>[
                 IconButton(
                     onPressed: SharePressed,
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.share,
                       color: Colors.black,
                       size: 19,
                     )),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 )
               ],
@@ -183,7 +183,7 @@ class BizCard extends StatelessWidget {
       height: 100,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: const BorderRadius.all(Radius.circular(50.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(90.0)),
         border: Border.all(color: Colors.redAccent, width: 1.2),
         image: const DecorationImage(
             image: NetworkImage("https://picsum.photos/seed/picsum/300/300"),
